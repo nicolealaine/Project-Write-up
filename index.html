@@ -1,0 +1,190 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta title="Weather Application by Daniel Crayne">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/jquery.tocify.css">
+  </head>
+
+<body onload="generateTOC(document.getElementById('toc'));">
+ 
+
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-sm-9">
+          <h1 class="page-header">Daniel Crayne CS Project</h1>
+          <p class="lead">A study in things that are also other things
+              (subtitle)</p>
+        </div>
+
+        <div class="nav col-sm-3 ">
+
+          <div id="toc" class="tocify"></div>
+
+        </div>
+        </div>
+
+      </div><!-- endrow -->
+
+      <div class="row">
+            <div class="breakhere"></div>
+        <div class="col-sm-9">
+          <div class="content">
+
+          <h2>Abstract</h2>
+
+          <p>This project uses a web application language and framework called
+          Elm (http://www.elm-lang.org) to make a simple program which queries
+          a web API for JSON data based on front-end input, and then parses it,
+          and returns a simple HTML table of the results.</p>
+
+          <p>This example is very simple, and should serve as a basic
+          introduction to the Elm language and framework. Much of the
+          information presented was based on online examples either directly or
+          indirectly (especially the Elm tutorial https://guide.elm-lang.org/);
+          links will be provided as appropriate, and hopefully I have given
+          credit where it's due!<p>
+
+          <p>Please note that this document assumes no prior knowledge of any
+          of the technologies listed; so if you already know what JSON, etc.
+          are then please feel free to skip those sections!</p>
+
+              <h2>1 - Things at large</h2>
+              <div></div>
+                <h3>1.1 - Stuff</h3>
+              <p>Bacon ipsum dulor amet capicola sausage picanha venison short
+              ribs, t-bone shankle flank alcatra ground round jerky pork loin
+              prosciutto. Tri-tip alcatra capicola flank pastrami shank. Ham
+              corned beef jerky chicken biltong shank. Pork belly tenderloin
+              meatloaf pastrami alcatra ham hock meatball flank porchetta.
+              Tenderloin bacon flank, shankle andouille short ribs filet mignon
+              turkey cow bresaula. Fatback shankle sausage meatloaf capicola
+              landjaeger pancetta jowl bacon.</p>
+
+              <p>Kielbasa fatback cow, pancetta turkey burgdoggen t-bone.
+              Sirloin cow turducken, rump shank cupim pig alcatra. Spare ribs
+              bacon picanha swine tenderloin ham t-bone cupim burgdoggen pork
+              chop. Landjaeger venison pork chop, pig fatback ham hock sausage
+              capicola cupim short ribs shank short loin hamburger rump.</p>
+
+              <h3>1.2 - Other stuff</h3>
+              <p>Ball tip kielbasa andouille landjaeger chicken short loin cow
+              picanha, pork loin pig. Short ribs capicola salami, turducken pork
+              belly cow t-bone doner picanha tenderloin filet mignon bresaula
+              pastrami. Capicola picanha fatback porchetta. Pork picanha shank,
+              spare ribs turducken turkey burgdoggen. Cupim brisket beef
+              meatloaf chuck ham hock corned beef cow tail shank turkey pork
+              chop leberkas. Bacon fatback hamburger pig jerky. Fatback pork
+              loin biltong drumstick venison kielbasa.</p>
+
+              <h4>1.2.1 - this is more stuff</h4>
+
+              <p>Bacon ipsum dulor amet capicola sausage picanha venison short
+              ribs, t-bone shankle flank alcatra ground round jerky pork loin
+              prosciutto. Tri-tip alcatra capicola flank pastrami shank. Ham
+              corned beef jerky chicken biltong shank. Pork belly tenderloin
+              meatloaf pastrami alcatra ham hock meatball flank porchetta.
+              Tenderloin bacon flank, shankle andouille short ribs filet mignon
+              turkey cow bresaula. Fatback shankle sausage meatloaf capicola
+              landjaeger pancetta jowl bacon.</p>
+
+              <p>Kielbasa fatback cow, pancetta turkey burgdoggen t-bone.
+              Sirloin cow turducken, rump shank cupim pig alcatra. Spare ribs
+              bacon picanha swine tenderloin ham t-bone cupim burgdoggen pork
+              chop. Landjaeger venison pork chop, pig fatback ham hock sausage
+              capicola cupim short ribs shank short loin hamburger rump.</p>
+
+              <h2>2 - Words</h2>
+                <h3>2.1 - Hello is a word</h3>
+              <p>Flank capicola beef, pastrami swine biltong venison. Salami
+              filet mignon fatback swine, meatloaf leberkas landjaeger pork loin
+              t-bone tongue spare ribs flank boudin porchetta doner. Capicola
+              pork belly jerky tongue pig shank, spare ribs filet mignon shankle
+              short ribs tri-tip venison biltong sirloin meatball. Tenderloin
+              bresaula pork chop meatloaf alcatra hamburger short loin capicola
+              rump landjaeger ribeye. T-bone venison shank rump jerky turkey
+              prosciutto pork chop kielbasa bacon cow ball tip kevin.</p>
+
+              <figure>
+                <pre><code>hello world
+This is some code {
+  code;
+  code;
+}</code></pre>
+                  <figcaption>Figure 1.1 - This is some code</figcaption>
+              </figure>
+              <p>Meatloaf fatback ball tip, pig pastrami filet mignon biltong
+              venison. Pig shoulder capicola meatloaf swine porchetta tenderloin
+              short ribs fatback. Ham hock ground round meatloaf tail ribeye
+              doner. Kevin pancetta pork belly bresaula. Brisket andouille shank
+              salami kevin short ribs meatball tongue pig capicola venison beef
+              ribs meatloaf. Tail chuck biltong hamburger, shank beef ribs
+              leberkas swine doner cow ball tip. Rump swine tri-tip burgdoggen,
+              jerky bresaula biltong sirloin chicken turkey cow tail kielbasa
+              meatball filet migno</p>
+
+              <p>Meatloaf fatback ball tip, pig pastrami filet mignon biltong
+              venison. Pig shoulder capicola meatloaf swine porchetta tenderloin
+              short ribs fatback. Ham hock ground round meatloaf tail ribeye
+              doner. Kevin pancetta pork belly bresaula. Brisket andouille shank
+              salami kevin short ribs meatball tongue pig capicola venison beef
+              ribs meatloaf. Tail chuck biltong hamburger, shank beef ribs
+              leberkas swine doner cow ball tip. Rump swine tri-tip burgdoggen,
+              jerky bresaula biltong sirloin chicken turkey cow tail kielbasa
+              meatball filet migno</p>
+
+              <p>Flank capicola beef, pastrami swine biltong venison. Salami
+              filet mignon fatback swine, meatloaf leberkas landjaeger pork loin
+              t-bone tongue spare ribs flank boudin porchetta doner. Capicola
+              pork belly jerky tongue pig shank, spare ribs filet mignon shankle
+              short ribs tri-tip venison biltong sirloin meatball. Tenderloin
+              bresaula pork chop meatloaf alcatra hamburger short loin capicola
+              rump landjaeger ribeye. T-bone venison shank rump jerky turkey
+              prosciutto pork chop kielbasa bacon cow ball tip kevin.</p>
+
+              <p>Flank capicola beef, pastrami swine biltong venison. Salami
+              filet mignon fatback swine, meatloaf leberkas landjaeger pork loin
+              t-bone tongue spare ribs flank boudin porchetta doner. Capicola
+              pork belly jerky tongue pig shank, spare ribs filet mignon shankle
+              short ribs tri-tip venison biltong sirloin meatball. Tenderloin
+              bresaula pork chop meatloaf alcatra hamburger short loin capicola
+              rump landjaeger ribeye. T-bone venison shank rump jerky turkey
+              prosciutto pork chop kielbasa bacon cow ball tip kevin.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+  crossorigin="anonymous"></script>
+    
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+  
+  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <script src="scripts/jquery-ui.min.js"></script>
+  <script src="scripts/jquery.tocify.min.js"></script>
+  <script src="scripts/scripts.js"></script>
+
+  
+
+  </body>  
+
+</html>

@@ -1,0 +1,230 @@
+/*.sidebar {
+  height: 100%; 
+  background-color: #d2cdca;
+  position: fixed;
+  top: 0;
+  width: 200px;
+}
+
+.sidebar h2 {
+  font-size: 1.3em;
+}
+
+span.pgnum {
+  display: none;
+}*/
+
+p {
+  text-align: justify;
+  margin: 1em;
+}
+
+.content {
+  margin: 0 15%;
+}
+
+div#toc ul {
+  list-style-type: none;
+}
+
+figure {
+  margin: 1.5em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.sidebar h2 {
+  padding-left: 20px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+/*--Counters--*/
+
+body {
+  counter-reset: mainsection;
+  counter-reset: section1;
+  counter-reset: section2;
+  counter-reset: section3;
+  counter-reset: section4;
+  counter-reset: section5;
+  counter-reset: section1sub;
+  counter-reset: section1sub;
+  counter-reset: section1sub;
+  counter-reset: section1sub;
+  counter-reset: section1sub;
+}
+
+.mainsec {
+  counter-increment: mainsection;
+}
+
+.mainsec:before {
+  content: counter(mainsection) ": ";
+}
+
+.section1 {
+  counter-increment: section1;
+}
+
+.section1:before {
+  content: "1." counter(section1) ": ";
+}
+
+.section2 {
+  counter-increment: section2;
+}
+
+.section2:before {
+  content: "2." counter(section2) ": ";
+}
+
+.section3 {
+  counter-increment: section3;
+}
+
+.section3:before {
+  content: "3." counter(section3) ": ";
+}
+
+.section4 {
+  counter-increment: section4;
+}
+
+.section4:before {
+  content: "4." counter(section4) ": ";
+}
+
+.section5 {
+  counter-increment: section5;
+ }
+
+.section5:before {
+  content: "5." counter(section5) ": ";
+}
+
+.section6 {
+  counter-increment: section6;
+}
+
+.section6:before {
+  content: "6." counter(section6) ": ";
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  figure {
+    float: none;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+/*--Print Styles--*/
+
+@media print {
+
+  .page-header {
+    font-size: 40pt;
+  }
+
+  p.lead {
+    font-size: 20pt;
+  }
+
+  /*
+   .affix {
+    display: block;
+    position: relative;
+    page-break-after: always;
+  }
+
+ul.leaders {
+  overflow-x: hidden;
+  list-style: none;
+}
+ul.leaders li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  color: gray;
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+ul.leaders span:first-child {
+  letter-spacing: 2px;
+  padding-right: 0.33em;
+  background: white;
+}
+ul.leaders span + span {
+  float: right;
+  padding-left: 0.33em;
+  background: red;
+}
+ul.leaders span + span:before {
+}
+
+ul.leaders {
+  font-size: 30pt;
+}
+  */
+  
+  .sidebar {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20pt;
+    overflow: hidden;
+  }
+
+  .sidebar li {
+  }
+
+  .sidebar li span.pgnum {
+    display: inline;
+    float: right;
+  }
+
+  .sidebar li span.pgnum:before {
+    overflow: hidden;
+    float: left;
+    padding-right: 10px;
+    display: inline;
+    max-width: 50em;
+    content: '......................'
+             '..................'
+             '..................';
+  }
+
+
+  .content {
+    margin: 0 15%;
+  }
+
+  .breakhere {
+    page-break-before: always;
+  }
+
+  p {
+    font-size: 13pt;
+  }
+
+  pre {
+    font-size: 13pt;
+  }
+  
+  figure {
+    page-break-inside: avoid;
+  }
+
+}
